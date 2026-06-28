@@ -1,0 +1,564 @@
+/* ===========================
+   GOOGLE FONT & RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+/* ===========================
+   BLACK BACKGROUND
+=========================== */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* Aurora Glow */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:#00e5ff;
+    filter:blur(220px);
+    opacity:.12;
+    animation:aurora1 8s ease-in-out infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#ff00c8;
+    filter:blur(220px);
+    opacity:.08;
+    animation:aurora2 10s ease-in-out infinite alternate;
+}
+
+@keyframes aurora1{
+    from{
+        transform:translate(-250px,-150px);
+    }
+    to{
+        transform:translate(220px,180px);
+    }
+}
+
+@keyframes aurora2{
+    from{
+        transform:translate(280px,180px);
+    }
+    to{
+        transform:translate(-200px,-150px);
+    }
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    position:relative;
+    z-index:2;
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card{
+
+    width:480px;
+    max-width:92%;
+
+    padding:50px 40px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 0 35px rgba(0,229,255,.25),
+        inset 0 0 20px rgba(255,255,255,.04);
+
+    animation:cardIntro 1.4s ease;
+}
+
+@keyframes cardIntro{
+
+    from{
+
+        opacity:0;
+        transform:translateY(80px) scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+#title{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 15px #00e5ff,
+        0 0 35px #00e5ff;
+
+    animation:titleGlow 2s infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+    from{
+
+        text-shadow:
+        0 0 10px #00e5ff;
+
+    }
+
+    to{
+
+        text-shadow:
+        0 0 20px #00e5ff,
+        0 0 50px #00e5ff,
+        0 0 80px #00e5ff;
+
+    }
+
+}
+
+.tag{
+
+    color:#8defff;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+
+    display:block;
+
+}
+
+.line{
+
+    width:150px;
+
+    height:4px;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,#00e5ff,#ffffff,#00e5ff);
+
+}
+
+/* ===========================
+   MESSAGE
+=========================== */
+
+#message{
+
+    font-size:19px;
+
+    line-height:2;
+
+    color:#ececec;
+
+    margin-top:25px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+#wishBtn{
+
+    margin-top:35px;
+
+    border:none;
+
+    padding:16px 42px;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:#000;
+
+    background:#00e5ff;
+
+    transition:.35s;
+
+}
+
+#wishBtn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 20px #00e5ff,
+    0 0 60px #00e5ff;
+
+}
+
+/* ===========================
+   MUSIC BUTTON
+=========================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    z-index:999;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    background:#111;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    border:1px solid #00e5ff;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    position:fixed;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+/* ==========================================
+   PREMIUM ANIMATED STARS
+========================================== */
+
+#particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    animation:twinkle linear infinite;
+}
+
+@keyframes twinkle{
+
+    0%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+    }
+
+    100%{
+        opacity:.1;
+        transform:scale(.5);
+    }
+
+}
+
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    font-size:20px;
+
+    animation:floatHeart linear forwards;
+
+    opacity:.8;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+   CURSOR GLOW
+========================================== */
+
+.cursor-glow{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    background:#00e5ff;
+
+    filter:blur(15px);
+
+    transform:translate(-50%,-50%);
+
+    z-index:9999;
+
+    opacity:.7;
+
+}
+
+
+/* ==========================================
+   FIREWORK CANVAS
+========================================== */
+
+#fireworks{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+
+/* ==========================================
+   SHINING CARD EFFECT
+========================================== */
+
+.glass-card{
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-100%;
+
+    left:-50%;
+
+    width:70%;
+
+    height:300%;
+
+    background:
+
+    linear-gradient(
+
+    transparent,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+    transform:rotate(25deg);
+
+    animation:shine 6s infinite;
+
+}
+
+@keyframes shine{
+
+    0%{
+
+        left:-80%;
+
+    }
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+
+/* ==========================================
+   BUTTON RIPPLE
+========================================== */
+
+#wishBtn:active{
+
+    transform:scale(.94);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.glass-card{
+
+width:92%;
+
+padding:35px 25px;
+
+}
+
+#title{
+
+font-size:34px;
+
+}
+
+#message{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+#musicBtn{
+
+top:15px;
+
+right:15px;
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+footer{
+
+font-size:12px;
+
+}
+
+}
